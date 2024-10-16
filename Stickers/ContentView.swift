@@ -21,7 +21,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("Figuras", systemImage: "face.smiling.fill")
                 }
-            FiguraDetalheView()
+            FiguraDetalheView(figura: figuras[0])
                 .tabItem {
                     Label("Minha coleção", systemImage: "face.dashed")
                 }

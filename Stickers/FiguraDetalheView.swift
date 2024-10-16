@@ -11,25 +11,22 @@ struct FiguraDetalheView: View {
     
     @State var itensNaColecao: Int = 0
     
+    var figura: Figura
+    
     var body: some View {
         VStack (alignment: .leading) {
-            
-            Text("Mingle")
-                .font(.title)
-                .bold()
-                .padding()
             
             HStack {
                 Text("Frase: ")
                     .bold()
                     .padding(.leading)
                 
-                Text("\"Problema em dobro\"")
+                Text("\"\(figura.frase)\"")
                 
             }
             
             HStack {
-                Image("figura_01")
+                Image(figura.imagem)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 75)
@@ -46,7 +43,7 @@ struct FiguraDetalheView: View {
             
             HStack {
                 Spacer()
-                Text("O Mingle se destaca por fazer o dobro do trabalho na metade do tempo, com extrema precisão. Essas habilidades são úteis para ela em sua função de Analista de Dados Sênior para uma empresa internacional de computação em nuvem. Ela também tem uma propensão para dança de salão, dança de linha e praticamente qualquer tipo de atividade que a deixe dançar ao som da música.")
+                Text(figura.descricao)
                     .fontWeight(.light)
                     .foregroundColor(Color.gray)
             
@@ -83,10 +80,11 @@ struct FiguraDetalheView: View {
             
 
         }
-        .padding()
+        .navigationTitle(figura.nome)
     }
 }
 
 #Preview {
-    FiguraDetalheView()
+    FiguraDetalheView(figura: figuras[0])
 }
+

@@ -32,9 +32,9 @@ struct FiguraDetalheView: View {
                     .frame(width: 75)
                 
                 VStack (alignment: .leading){
-                    
-                    PropriedadesView()
-                    PropriedadesView(imagem: "bolt", nome: "Potência", valor: "60%", cor: .yellow)
+                    PropriedadesView(valorInteiro: figura.vidas, tipo: .numeroInteiro)
+                    PropriedadesView(imagem: "bolt", nome: "Potência", valorDecimal: figura.potencia, cor: .yellow, tipo: .numeroDecimal)
+//                    PropriedadesView(imagem: "circle", nome: "Teste", valor: "isso é um teste", cor: .purple, tipo: .texto)
                    
                 }
                 

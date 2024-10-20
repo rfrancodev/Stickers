@@ -19,9 +19,9 @@ struct PropriedadesView: View {
     
     var imagem: String = "lifepreserver"
     var nome: String = "Vidas"
-    var valor: String = "0.4"
-    var valorInteiro: Int = 1
-    var valorDecimal: Double = 1.0
+    @State var valor: String = "0.4"
+    @State var valorInteiro: Int = 1
+    @State var valorDecimal: Double = 1.0
     var cor: Color = .green
     var tipo: tipoPropriedade = .numeroDecimal
     
@@ -53,7 +53,7 @@ struct PropriedadesView: View {
             }
         }
         .sheet(isPresented: $isPresented) {
-            PropriedadeEditarView()
+            PropriedadeEditarView(valor: $valor, valorInteiro: $valorInteiro, valorDecimal: $valorDecimal, tipo: tipo)
         }
 
     }

@@ -19,9 +19,9 @@ struct PropriedadesView: View {
     
     var imagem: String = "lifepreserver"
     var nome: String = "Vidas"
-    @State var valor: String = "0.4"
-    @State var valorInteiro: Int = 1
-    @State var valorDecimal: Double = 1.0
+    @Binding var valor: String
+    @Binding var valorInteiro: Int
+    @Binding var valorDecimal: Double
     var cor: Color = .green
     var tipo: tipoPropriedade = .numeroDecimal
     
@@ -60,5 +60,5 @@ struct PropriedadesView: View {
 }
 
 #Preview {
-    PropriedadesView()
+    PropriedadesView(valor: .constant(""), valorInteiro: .constant(0), valorDecimal: .constant(0))
 }

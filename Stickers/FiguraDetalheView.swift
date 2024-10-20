@@ -11,7 +11,7 @@ struct FiguraDetalheView: View {
     
     @State var itensNaColecao: Int = 0
     
-    var figura: Figura
+    @ObservedObject var figura: Figura
     
     var body: some View {
         VStack (alignment: .leading) {
@@ -32,8 +32,8 @@ struct FiguraDetalheView: View {
                     .frame(width: 75)
                 
                 VStack (alignment: .leading){
-                    PropriedadesView(valorInteiro: figura.vidas, tipo: .numeroInteiro)
-                    PropriedadesView(imagem: "bolt", nome: "Potência", valorDecimal: figura.potencia, cor: .yellow, tipo: .numeroDecimal)
+                    PropriedadesView(valor: .constant(""), valorInteiro: $figura.vidas, valorDecimal: .constant(0), tipo: .numeroInteiro)
+                    PropriedadesView(imagem: "bolt", nome: "Potência", valor: .constant(""), valorInteiro: .constant(0), valorDecimal: $figura.potencia, cor: .yellow, tipo: .numeroDecimal)
 //                    PropriedadesView(imagem: "circle", nome: "Teste", valor: "isso é um teste", cor: .purple, tipo: .texto)
                    
                 }

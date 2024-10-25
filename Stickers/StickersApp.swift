@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct StickersApp: App {
+
+struct Stickers: App {
     var body: some Scene {
+        let minhaColecao = MinhaColecao()
         WindowGroup {
             ContentView()
+                .environmentObject(minhaColecao)
         }
     }
 }

@@ -67,6 +67,7 @@ struct FiguraDetalheView: View {
                 Button {
                 
                     minhaColecao.figuras.append(figura)
+                    minhaColecao.salvar()
                 } label: {
                     if minhaColecao.figuras.count == 0 {
                     Text("Adicionar a sua coleção")

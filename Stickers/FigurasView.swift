@@ -9,20 +9,13 @@ import SwiftUI
 
 struct FigurasView: View {
     
-    
-    
     var body: some View {
         
+        NavigationView {
+            
         List(figuras) { figura in
             NavigationLink(destination: FiguraDetalheView(figura: figura)) {
-                HStack {
-                    Image(figura.imagem+"_p")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 50, height: 50)
-                        .background(.gray)
-                        .containerShape(Circle())
-                    Text(figura.nome)
+                FigurasLinhaView(figura: figura)
                 }
             }
         }

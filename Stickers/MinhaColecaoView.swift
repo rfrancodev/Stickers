@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct MinhaColecaoView: View {
+    
     @EnvironmentObject var minhaColecao: MinhaColecao
+    
     var body: some View {
+        
         if minhaColecao.figuras.count == 0 {
             Text("Nenhuma figura adicionada")
         } else {
             List (minhaColecao.figuras) { figura in
-                Text(figura.nome)
+                NavigationLink {
+                    FiguraDetalheView(figura: figura)
+                } label: {
+                    FigurasLinhaView(figura: figura, cor: .green)
+                }
             }
+            .navigationTitle("Minha Coleção")
         }
     }
 }
